@@ -17,19 +17,17 @@ mysql> insert into marks values(‘6',‘patil','640');
 
 Creating Procedure
 
-mysql> create procedure proc_result(in marks int,out class
-char(20))
+mysql> create procedure proc_result(in marks int,out class char(20))
+begin
 
--> begin
+if(marks<1500&&marks>990)
+then
 
--> if(marks<1500&&marks>990)
--> then
+set class="Distincton’;
 
--> set class="Distincton’;
+end if;
 
--> end if;
-
--> if(marks<989&&marks>890)
+if(marks<989&&marks>890)
 -> then
 
 -> set class='First Class’;
