@@ -1,0 +1,83 @@
+ practical no 6
+ write a pl/sql block to create cursor to copy contents of one table into another avoid redundancy
+
+(base) pktc@pktc-desktop:~$ sudo mysql
+[sudo] password for pktc: 123
+
+mysql> show databses;
+
+mysql> use harsh;
+
+Database changed
+
+mysql> create table o_rollcall(roll_no int,name varchar(20),address varchar(20));
+mysql> create table n_rollcall(roll_no int,name varchar(20),address varchar(20));
+
+
+mysql> insert into o_rollcall values('1','sunny','bhosri');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into o_rollcall values('2','pallu','moshi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into o_rollcall values('3','akshu','chakan');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into o_rollcall values('4','rutu','khed');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into o_rollcall values('5','divya','davdi');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select *from o_rollcall;
++---------+---------+-------------+
+| roll_no | name    | address     |
++---------+---------+-------------+
+|       1 | sunny   | bhosri      |
+|       2 | pallu   | moshi       |
+|       3 | akshu   | chakan      |
+|       4 | rutu    | khed        |
+|       5 | divya   | davdi       |
++---------+---------+-------------+
+14 rows in set (0.01 sec)
+
+
+mysql> select name from  o_rollcall;
++---------+
+| name    |
++---------+
+| sunny   |
+| pallu   |
+| akshu   |
+| rutu    |
+| divya   |
++---------+
+14 rows in set (0.00 sec)
+
+mysql> select name,address from  o_rollcall;
++---------+-------------+
+| name    | address     |
++---------+-------------+
+| sunny   | bhosri      |
+| pallu   | moshi       |
+| akshu   | chakan      |
+| rutu    | khed        |
+| divya   | davdi       |
++---------+-------------+
+14 rows in set (0.00 sec)
+
+mysql> select name,address,roll_no from  o_rollcall;
++---------+-------------+---------+
+| name    | address     | roll_no |
++---------+-------------+---------+
+| sunny   | bhosri      |       1 |
+| pallu   | moshi       |       2 |
+| akshu   | chakan      |       3 |
+| rutu    | khed        |       4 |
+| divya   | davdi       |       5 |
++---------+-------------+---------+
+14 rows in set (0.00 sec)
+
+mysql>
+
+
