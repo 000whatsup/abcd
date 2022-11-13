@@ -1,0 +1,103 @@
+Practical 2(a)
+
+Creating Table:-
+
+mysql> create table client_master(client_no int,client_name varchar(20),address varchar(50),city
+varchar(10),pincode int,state varchar(20), bal_due float,primary key(client_no));
+
+Inserting values in Table:-
+
+mysql> insert into client_master values(‘001','abhi’,'nasik’, 'nasik’,'422004','MH','5000')
+
+mysql> insert into client_master values('002','‘piyu’,'nasik’,'nasik','422004',"MH’,'10000);
+
+mysql> insert into client_master values('003','abd’,'nasik’,'nasik’,'422003',"MH’,'5000);
+
+mysql> insert into client_master values('004','abd’,'nasik’,'nasik’,'422003',"MH','5000);
+
+mysql> insert into client_master values(‘005’,'abc’, nasik’, ‘nasik’,'422003','MH’,'5000');
+
+Viewing Created Table:-
+
+mysql> select * from client_master;
+
++ + + + + sacnnan +
+
+| client_no | client_name | address | city
+| bal_due |
+
+| pincode | state + + + + +
+| 1 | abhi 5000 | | nasik | nasik | 422004 | MH |
+
+| 2 | piyu 10000 | | nasik | nasik | 422004 | MH |
+| 3 | abd 5000 | | nasik | nasik | 422003 | MH |
+
+| 4 | abd 5000 | | nasik | nasik | 422003 | MH |
+
+| 5 | abe 5000 | | nasik | nasik | 422003 | MH
+
++
++
+
+5 rows in set (0.00 sec)
+
+mysql> select client_name,client_no from client_master;
+spon nnnnnn nnn sponnn anne nn +
+| client_name | client_no|
+
+seaccnennnnenee seannnnn anne +
+| abhi | 1 |
+| piyu | 2 |
+| abd | 3 |
+| abd | 4 |
+| abc | 5 |
+seaccnennnnenee seannnnn anne +
+
+5 rows in set (0.00 sec)
+
++
+Creating view on Table:-
+
+mysql> create view client as select client_no,client_name from c_master;
+
+Viewing created view:-
+
+mysql> select * from client;
+sana-------- span nnnnnnnnnn- +
+
+| client_no | client_name |
+sana-------- span nnnnnnnnnn- +
+
+| 5 | abc |
+
+|3 | abd |
+
+| 1 | abhi |
+
+| 4 | nut |
+
+| 2 | piyu |
+
+| 6 | xyz |
+
+spanennnenn=- spannnn-n---=- +
+6 rows in set (0.23 sec)
+
+Creating and Viewing Index:-
+
+mysql> create index client_search on client_master(client_no);
+Query OK, 0 rows affected (0.42 sec)
+
+Records: 0
+
+Duplicates: 0
+
+Warnings: 0
+
+mysql> create index client_find on client_master(client_name,city);
+affected (0.41 sec)
+
+Records: 0
+
+Duplicates: 0
+
